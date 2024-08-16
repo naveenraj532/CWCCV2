@@ -40,6 +40,60 @@
   } */
 }
 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.slider {
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: calc(100% - 130px); /* Account for 16px padding on both ends */
+  padding: 0 100px; /* 16px padding on the x-axis */
+}
+
+.slider::before,
+.slider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px; /* Adjust based on the desired fade width */
+  z-index: 2;
+}
+
+.slider::before {
+  left: 0;
+  background: linear-gradient(to right, rgb(36, 34, 34), rgba(255, 255, 255, 0));
+}
+
+.slider::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(36, 34, 34, 1), rgba(255, 255, 255, 0));
+}
+
+.slide-track {
+  display: flex;
+  animation: scroll 40s linear infinite;
+  width: calc(250px * 28); /* Adjust based on the number of clients times 2 */
+  position: relative;
+  z-index: 1;
+}
+
+.slide {
+  height: 100px;
+  flex-shrink: 0;
+  width: 140px; /* Adjust based on your needs */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 @layer utilities {
   .padding {

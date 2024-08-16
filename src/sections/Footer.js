@@ -4,6 +4,7 @@ import logo from "../assets/images/newlogo.png";
 export const Footer = () => {
   return (
     <div className="bg-lightblack text-white p-8">
+      <div className={`bg-gray-700 h-[0.6px] mb-10`}></div>
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row md:gap-64 items-start justify-center">
           
@@ -54,21 +55,21 @@ export const Footer = () => {
                 <FaMapMarkerAlt className="inline mr-2 text-gray-400" size={24} />
                 <div>
                   <p className="font-semibold">Air Warehouse</p>
-                  <p className="text-sm w-56 text-gray-500">99/5, MGR Salai, Nagalkeni, Chromepet, Chennai - 600 044.</p>
+                  <p className="text-sm w-56 text-lightgray">99/5, MGR Salai, Nagalkeni, Chromepet, Chennai - 600 044.</p>
                 </div>
               </div>
               <div className='flex flex-row items-center'>
                 <FaMapMarkerAlt className="inline mr-2 text-gray-400" size={24} />
                 <div>
                   <p className="font-semibold">Sea Warehouse Unit 1</p>
-                  <p className="text-sm w-56 text-gray-500">Door No. 90, G.N.T Road, Ponniamman Medu, Madhavaram, Chennai - 600060.</p>
+                  <p className="text-sm w-56 text-lightgray">Door No. 90, G.N.T Road, Ponniamman Medu, Madhavaram, Chennai - 600060.</p>
                 </div>
               </div>
               <div className='flex flex-row items-center'>
                 <FaMapMarkerAlt className="inline mr-2 text-gray-400" size={24} />
                 <div>
                   <p className="font-semibold">Sea Warehouse Unit 2</p>
-                  <p className="text-sm w-56 text-gray-500">SY. No 2/1A & 3/3A, Kathirvedu Village, Puzhal, Ambattur Taluk, Chennai - 600 066</p>
+                  <p className="text-sm w-56 text-lightgray">SY. No 2/1A & 3/3A, Kathirvedu Village, Puzhal, Ambattur Taluk, Chennai - 600 066</p>
                 </div>
               </div>
             </div>
@@ -76,8 +77,8 @@ export const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 border-t border-gray-700 pt-8">
-          <p className="text-center text-sm text-gray-500">Copyright © 2024 CWC IMPORT PVT.LTD. All rights reserved.</p>
+        <div className=" justify-center items-center pt-8">
+          <p className="text-center text-sm text-lightgray">Copyright © 2024 CWC IMPORT PVT.LTD. All rights reserved.</p>
         </div>
       </div>
     </div>

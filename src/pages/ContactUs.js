@@ -1,13 +1,10 @@
 import { useEffect, useRef } from "react";
-import { FaEnvelope, FaUser, FaTag, FaPhone, FaComment, FaIdBadge, FaMapMarkerAlt } from 'react-icons/fa';
-import ImageSlider from "../components/ImageSlider";
+import { FaEnvelope, FaUser, FaTag, FaPhone, FaComment, FaIdBadge} from 'react-icons/fa';
 
 const ContactUs = () => {
     const contactUsRef = useRef(null);
     const formRef = useRef(null);
-    const warehouseRef1 = useRef(null);
-    const warehouseRef2 = useRef(null);
-    const warehouseRef3 = useRef(null);
+    const warehouseRefs = useRef([useRef(null), useRef(null), useRef(null)]);
 
     useEffect(() => {
         const observerOptions = {
@@ -27,9 +24,9 @@ const ContactUs = () => {
 
         if (contactUsRef.current) observer.observe(contactUsRef.current);
         if (formRef.current) observer.observe(formRef.current);
-        if (warehouseRef1.current) observer.observe(warehouseRef1.current);
-        if (warehouseRef2.current) observer.observe(warehouseRef2.current);
-        if (warehouseRef3.current) observer.observe(warehouseRef3.current);
+        warehouseRefs.current.forEach(ref => {
+            if (ref.current) observer.observe(ref.current);
+        });
 
         return () => observer.disconnect();
     }, []);
@@ -58,60 +55,45 @@ const ContactUs = () => {
     };
 
     return (
-        <>
-            <h1 ref={contactUsRef} className="font-montserrat mt-24 font-bold text-charcoal text-4xl text-center opacity-0">
-                Contact Us
+            <div className="flex flex-col mt-10 items-center justify-center min-h-screen">
+            <h1 className="font-inter font-bold text-gray-300 text-4xl text-center pb-9">
+                Get in touch
             </h1>
-            <div className="min-h-screen bg-gradient-to-b from-blue to-white text-charcoal font-montserrat p-6 mt-8 md:p-12 mb-12">
-                <div className="flex flex-col gap-10 md:flex-row items-start md:items-start px-16 md:px-8">
-                    <div className="w-full md:w-2/5 mt-12 md:mt-0 md:ml-4">
-                        <div ref={warehouseRef1} className="opacity-0">
-                            <WarehouseCard
-                                title="Air Warehouse"
-                                address="99/5, MGR Salai, Nagalkeni, Chromepet, Chennai - 600 044."
-                                mapSrc="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.1181950323494!2d80.13705597489287!3d12.964287887350364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525fca642e74c1%3A0x3e4978a4346badcf!2s99%2F5%2C%20MGR%20Rd%2C%20Shiva%20Shankar%20Nagar%2C%20Nagalkeni%2C%20Chromepet%2C%20Chennai%2C%20Tamil%20Nadu%20600044!5e0!3m2!1sen!2sin!4v1723373408924!5m2!1sen!2sin"
-                            />
-                        </div>
-                        <div ref={warehouseRef2} className="opacity-0">
-                            <WarehouseCard
-                                title="Sea Warehouse Unit 1"
-                                address="Door No. 90, G.N.T Road, Ponniamman Medu, Madhavaram, Chennai - 600060."
-                                mapSrc="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.5988866790053!2d80.24479527489578!3d13.124577987205052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265a718f7f82f%3A0xaf59e6437288f590!2s90%2C%20Grand%20Northern%20Trunk%20Rd%2C%20Kumar%20Nagar%2C%20Kennedy%20Nagar%2C%20Erukkancheri%2C%20Madhavaram%2C%20Chennai%2C%20Tamil%20Nadu%20600118!5e0!3m2!1sen!2sin!4v1723481675498!5m2!1sen!2sin"
-                            />
-                        </div>
-                        <div ref={warehouseRef3} className="opacity-0">
-                            <WarehouseCard
-                                title="Sea Warehouse Unit 2/100000 SQF"
-                                address="SY. No 2/1A &3/3A, Kathirvedu Village, Puzhal, Ambattur Taluk, Chennai - 600 066."
-                            />
-                        </div>
+            <div className="flex flex-col gap-10 md:flex-col items-center justify-center space-y-12 md:space-y-0 md:space-x-12">
+                <form ref={formRef} onSubmit={onSubmit} className="bg-white p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out opacity-0 w-full md:w-4/5">
+                <h2 className="text-3xl font-bold text-center mb-6">Send an Email</h2>
+                <div className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <InputField label="First Name" name="FirstName" icon={<FaUser />} />
+                    <InputField label="Last Name" name="LastName" icon={<FaUser />} />
                     </div>
-                    <div className="w-full">
-                        <form ref={formRef} onSubmit={onSubmit} className="bg-white p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out opacity-0">
-                            <h2 className="text-3xl font-bold text-center mb-6">Get in Touch</h2>
-                            <div className="space-y-6">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <InputField label="First Name" name="FirstName" icon={<FaUser />} />
-                                    <InputField label="Last Name" name="LastName" icon={<FaUser />} />
-                                </div>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <InputField label="E-mail Address" name="Email" type="email" icon={<FaEnvelope />} />
-                                    <InputField label="Phone Number" name="PhoneNumber" type="tel" icon={<FaPhone />} />
-                                </div>
-                                <InputField label="Subject" name="Subject" icon={<FaTag />} />
-                                <TextAreaField label="Message" name="Message" icon={<FaComment />} />
-                            </div>
-                            <div className="text-center mt-6">
-                                <button type="submit" className="bg-forest-green text-white py-2 px-6 rounded-full shadow-xl hover:bg-green-700 transition-all">
-                                    Submit
-                                </button>
-                            </div>
-                        </form>
-                        <ImageSlider />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <InputField label="E-mail Address" name="Email" type="email" icon={<FaEnvelope />} />
+                    <InputField label="Phone Number" name="PhoneNumber" type="tel" icon={<FaPhone />} />
                     </div>
+                    <InputField label="Subject" name="Subject" icon={<FaTag />} />
+                    <TextAreaField label="Message" name="Message" icon={<FaComment />} />
+                </div>
+                <div className="text-center mt-6">
+                    <button className="mt-4 px-4 py-2 text-lightblack border-2 rounded-full border-blue border-solid hover:bg-blue"
+                        onClick={() => window.location.href = '/ContactUs'}>
+                        Submit
+                    </button>
+                </div>
+                </form>
+
+                <div className="flex flex-wrap  flex-1/2">
+                <div className="flex flex-row gap-5 justify-center">
+                    {warehouses.map((warehouse, index) => (
+                    <div ref={warehouseRefs.current[index]} key={index} className="opacity-0">
+                        <WarehouseCard {...warehouse} />
+                    </div>
+                    ))}
+                </div>
                 </div>
             </div>
-        </>
+            </div>
+
     );
 };
 
@@ -149,14 +131,14 @@ const TextAreaField = ({ label, name, icon }) => (
 );
 
 const WarehouseCard = ({ title, address, license, mapSrc }) => (
-    <div className="bg-white w-96 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out mb-8">
-        <h2 className="text-lg w-80 font-bold text-center mb-4">{title}</h2>
-        <p className="text-charcoal mb-4 flex items-start">
-            <FaMapMarkerAlt className="mr-2 mt-1 text-forest-green" /> {address}
+    <div className="bg-white p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out">
+        <h2 className="text-md font-bold text-center mb-2">{title}</h2>
+        <p className="text-charcoal w-72 text-sm text-center mb-4 flex items-start">
+           {address}
         </p>
         {license && (
             <p className="text-charcoal mb-4 flex items-start">
-                <FaIdBadge className="mr-2 mt-1 text-forest-green" /> {license}
+                <FaIdBadge className=" mt-1 text-forest-green" /> {license}
             </p>
         )}
         {mapSrc && (
@@ -170,5 +152,23 @@ const WarehouseCard = ({ title, address, license, mapSrc }) => (
         )}
     </div>
 );
+
+const warehouses = [
+    {
+        title: "Air Warehouse",
+        address: "99/5, MGR Salai, Nagalkeni, Chromepet, Chennai - 600 044.",
+        mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.1181950323494!2d80.13705597489287!3d12.964287887350364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525fca642e74c1%3A0x3e4978a4346badcf!2s99%2F5%2C%20MGR%20Rd%2C%20Shiva%20Shankar%20Nagar%2C%20Nagalkeni%2C%20Chromepet%2C%20Chennai%2C%20Tamil%20Nadu%20600044!5e0!3m2!1sen!2sin!4v1723373408924!5m2!1sen!2sin",
+    },
+    {
+        title: "Sea Warehouse Unit 1",
+        address: "Door No. 90, G.N.T Road, Ponniamman Medu, Madhavaram, Chennai - 600060.",
+        mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.5988866790053!2d80.24479527489578!3d13.124577987205052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265a718f7f82f%3A0xaf59e6437288f590!2s90%2C%20Grand%20Northern%20Trunk%20Rd%2C%20Kumar%20Nagar%2C%20Kennedy%20Nagar%2C%20Erukkancheri%2C%20Madhavaram%2C%20Chennai%2C%20Tamil%20Nadu%20600118!5e0!3m2!1sen!2sin!4v1723481675498!5m2!1sen!2sin",
+    },
+    {
+        title: "Sea Warehouse Unit 2",
+        address: "SY. No 2/1A &3/3A, Kathirvedu Village, Puzhal, Ambattur Taluk, Chennai - 600 066.",
+        mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.152035598625!2d80.2060659!3d13.1528083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52658d0487213f%3A0xed14c5fcdc36f0d9!2sCwc%20import!5e0!3m2!1sen!2sin!4v1723813561256!5m2!1sen!2sin",
+    },
+]
 
 export default ContactUs;

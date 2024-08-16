@@ -39,7 +39,10 @@ const ImageSlider = () => {
   }, []);
 
   return (
-    <div className="mt-16 relative w-full h-[500px] md:h-[600px] flex justify-center items-center">
+    <div className="mt-16 relative w-full h-[500px] md:h-[600px] flex flex-col justify-center items-center">
+            <h1 className="font-inter font-bold text-gray-300 text-4xl text-center pb-9">
+                Photos
+            </h1>
       <div className="relative w-full h-full max-w-4xl">
         {/* Feathered Background Frame */}
         <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-60 rounded-xl"></div>
