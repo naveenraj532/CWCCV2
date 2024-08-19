@@ -54,46 +54,46 @@ const Home = () => {
 
     return (
         <main className="bg-lightblack">
-            <section
+            <section id="hero"
                 ref={el => (sectionRefs.current.imageLoader = el)}
-                className={`xl:padding-1 wide:padding-r padding-b ${fadeInSections.imageLoader ? "animate-fadeInUp" : ""}`}
+                className={`xl:padding-1 wide:padding-r scroll-mt-24 padding-b ${fadeInSections.imageLoader ? "animate-fadeInUp" : ""}`}
             >
                 <Hero />
             </section>
-            <section
+            <section id="hero"
                 ref={el => (sectionRefs.current.moreAboutUs = el)}
-                className={`xl:padding-0 wide:padding-r padding-b ${fadeInSections.moreAboutUs ? "animate-fadeInUp" : ""}`}
+                className={`xl:padding-0 wide:padding-r padding-b scroll-mt-24 ${fadeInSections.moreAboutUs ? "animate-fadeInUp" : ""}`}
             >
                 <CWCworld />
             </section>
-            <section
+            <section id="services"
                 ref={el => (sectionRefs.current.services = el)}
-                className={`xl:padding-0 wide:padding-r padding-b ${fadeInSections.services ? "animate-fadeInUp" : ""}`}
+                className={`xl:padding-0 wide:padding-r scroll-mt-24 padding-b ${fadeInSections.services ? "animate-fadeInUp" : ""}`}
             >
                 <Whatwedo />
             </section>
-            <section
+            <section id="clients"
                 ref={el => (sectionRefs.current.clients = el)}
-                className={`xl:padding-0 wide:padding-r padding-b ${fadeInSections.clients ? "animate-fadeInUp" : ""}`}
+                className={`xl:padding-0 wide:padding-r padding-b scroll-mt-24 ${fadeInSections.clients ? "animate-fadeInUp" : ""}`}
             >
                 <Clients />
             </section>
-            <section
+            <section id="about-us"
                 ref={el => (sectionRefs.current.director = el)}
-                className={`xl:padding-0 wide:padding-r padding-b ${fadeInSections.director ? "animate-fadeInUp" : ""}`}
+                className={`xl:padding-0 wide:padding-r padding-b scroll-mt-24 ${fadeInSections.director ? "animate-fadeInUp" : ""}`}
             >
                 <AboutUs />
             </section> 
 
-            <section
+            <section id="contact-us"
                 ref={el => (sectionRefs.current.director = el)}
-                className={`xl:padding-0 wide:padding-r padding-b ${fadeInSections.director ? "animate-fadeInUp" : ""}`}
+                className={`xl:padding-0 wide:padding-r padding-b scroll-mt-24 ${fadeInSections.director ? "animate-fadeInUp" : ""}`}
             >
                 <ContactUs />
             </section> 
             <section
                 ref={el => (sectionRefs.current.blog = el)}
-                className={`xl:padding-0 wide:padding-r padding-b ${fadeInSections.blog ? "animate-fadeInUp" : ""}`}
+                className={`xl:padding-0 wide:padding-r padding-b scroll-mt-24 ${fadeInSections.blog ? "animate-fadeInUp" : ""}`}
             >
                 <ImageSlider />
             </section>

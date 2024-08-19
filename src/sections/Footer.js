@@ -27,18 +27,18 @@ export const Footer = () => {
           <div className="text-center md:text-left mb-8 md:mb-0">
             <h3 className="font-semibold text-lg mb-4">Menu</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white">Home</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">About Us</a></li>
+              <li><a href="#hero" className="text-gray-400 hover:text-white">Home</a></li>
+              <li><a href="#about-us" className="text-gray-400 hover:text-white">About Us</a></li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white">Services</a>
+                <a href="#services" className="text-gray-400 hover:text-white">Services</a>
                 <ul className="ml-4 space-y-2">
-                  <li><a href="#" className="text-gray-400 hover:text-white">Warehousing</a></li>
-                  <li><a href="#" className="text-gray-400 hover:text-white">Storage</a></li>
-                  <li><a href="#" className="text-gray-400 hover:text-white">3 PL SERVICES</a></li>
+                  <li><a href="#services" className="text-gray-400 hover:text-white">Warehousing</a></li>
+                  <li><a href="#services" className="text-gray-400 hover:text-white">Storage</a></li>
+                  <li><a href="#services" className="text-gray-400 hover:text-white">3 PL SERVICES</a></li>
                 </ul>
               </li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Our Clients</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Contact Us</a></li>
+              <li><a href="#clients" className="text-gray-400 hover:text-white">Our Clients</a></li>
+              <li><a href="#contact-us" className="text-gray-400 hover:text-white">Contact Us</a></li>
             </ul>
             <div className="mt-8 flex justify-center md:justify-start space-x-4">
               <a href="#" className="text-gray-400 hover:text-white"><FaGoogle /></a>

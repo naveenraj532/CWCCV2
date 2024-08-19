@@ -1,4 +1,5 @@
 import '../index.css';
+import AboutUs from '../pages/AboutUs.js';
 import  Home  from '../pages/Home.js';
 import { Footer } from '../sections/Footer';
 import Navbar from './Navbar';
@@ -12,7 +13,7 @@ function App() {
           <Navbar />
           <Routes>
               <Route path='/' element={<Home />} />
-              <Route path='/about-us' element={<Home />} />
+              <Route path='/about-us' element={<AboutUs />} />
               <Route path='/our-services' element={<Home />} />
               <Route path='/contact-us' element={<Home />} />
           </Routes>

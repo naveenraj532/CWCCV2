@@ -1,13 +1,15 @@
 // import { facebook, instagram, shieldTick, support, truckFast, twitter } from "../assets/icons";
 // import { bigShoe1, bigShoe2, bigShoe3, customer1, customer2, shoe4, shoe5, shoe6, shoe7, thumbnailShoe1, thumbnailShoe2, thumbnailShoe3 } from "../assets/images";
-import { FaHome, FaInfoCircle, FaBoxes,FaPhone } from 'react-icons/fa';
+import { FaHome, FaInfoCircle, FaBriefcase, FaUsers, FaEnvelope  } from 'react-icons/fa';
 
 export const navLinks = [
-    { href: "/", label: "Home", icon: FaHome },
-    { href: "/about-us", label: "About Us", icon: FaInfoCircle },
-    { href: "/our-services", label: "Our Services", icon: FaBoxes },
-    { href: "/contact-us", label: "Contact Us", icon: FaPhone },
-];
+    { href: '#hero', label: 'Home', icon: <FaHome /> },
+    { href: '#about-us', label: 'About Us', icon: <FaInfoCircle /> },
+    { href: '#services', label: 'Services', icon: <FaBriefcase /> },
+    { href: '#clients', label: 'Clients', icon: <FaUsers /> },
+    { href: '#contact-us', label: 'Contact Us', icon: <FaEnvelope /> },
+  ];
+  
 
 // export const shoes = [
 //     {
