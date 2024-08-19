@@ -1,6 +1,6 @@
 import Suresh from "../assets/images/Suresh.svg";
 
-export const Director = () => {
+const Director = () => {
   return (
     <div className="px-80 justify-center items-center flex flex-row gap-20">
         <img height={200} width={200} src={Suresh} alt="director.png" />
@@ -15,3 +15,5 @@ export const Director = () => {
     </div>
   )
 }
+
+export default Director;

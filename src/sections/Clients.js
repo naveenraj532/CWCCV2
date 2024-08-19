@@ -13,12 +13,30 @@ import client11 from "../assets/images/client-11.jpg";
 import client12 from "../assets/images/client-12.jpg";
 import client13 from "../assets/images/client-13.jpg";
 import client14 from "../assets/images/client-14.jpg";
+import client15 from "../assets/images/client-15.png";
+import client16 from "../assets/images/client-16.png";
 import client17 from "../assets/images/client-17.jpg";
+import client18 from "../assets/images/client-18.png";
+import client19 from "../assets/images/client19.png";
+import client20 from "../assets/images/client20.png";
+import client21 from "../assets/images/client21.png";
+import client22 from "../assets/images/client22.png";
+import client23 from "../assets/images/client23.png";
+import client24 from "../assets/images/client24.png";
+import client25 from "../assets/images/client25.png";
+import client26 from "../assets/images/client26.webp";
+import client27 from "../assets/images/client27.png";
+import client28 from "../assets/images/client28.png";
+
+
 
 const clients = [
   client1, client2, client3, client4, client5,
   client6, client7, client8, client9, client10,
-  client11, client12, client13, client14, client17
+  client11, client12, client13, client14, client17,
+  client15, client16, client18, client19, client20,
+  client21, client22, client23, client24, client25,
+  client26, client27, client28
 ];
 
 export const Clients = () => {

@@ -1,5 +1,5 @@
 import logo from "../assets/images/newlogonb.png";
-import bgvideo from "../assets/videos/bgvideo.mp4";
+import bgvideo from "../assets/videos/bgvideo-1.mp4";
 
 export const Hero = () => {
   return (

@@ -86,7 +86,7 @@ const ContactUs = () => {
                 <div className="flex flex-row gap-5 justify-center">
                     {warehouses.map((warehouse, index) => (
                     <div ref={warehouseRefs.current[index]} key={index} className="opacity-0">
-                        <WarehouseCard {...warehouse} />
+                        <WarehouseCard className="flip-scale-up-ver" {...warehouse} />
                     </div>
                     ))}
                 </div>
@@ -131,27 +131,39 @@ const TextAreaField = ({ label, name, icon }) => (
 );
 
 const WarehouseCard = ({ title, address, license, mapSrc }) => (
-    <div className="bg-white p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out">
-        <h2 className="text-md font-bold text-center mb-2">{title}</h2>
-        <p className="text-charcoal w-72 text-sm text-center mb-4 flex items-start">
-           {address}
-        </p>
-        {license && (
-            <p className="text-charcoal mb-4 flex items-start">
-                <FaIdBadge className=" mt-1 text-forest-green" /> {license}
-            </p>
-        )}
-        {mapSrc && (
-            <iframe
+    <div className="flip-container" onClick={(e) => e.currentTarget.classList.toggle('hover')}>
+      <div className="flipper">
+        <div className="front">
+          <div className="card-content">
+            <h2 className="title">{title}</h2>
+            <p className="address">{address}</p>
+          </div>
+        </div>
+        <div className="back">
+          <div className="card-content">
+            <h2 className="title">{title}</h2>
+            <p className="address">{address}</p>
+            {license && (
+              <p className="license">
+                <FaIdBadge className="icon" /> {license}
+              </p>
+            )}
+            {mapSrc && (
+              <iframe
                 src={mapSrc}
-                className="w-full h-48 mt-4 border-0"
+                className="map"
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-        )}
+              ></iframe>
+            )}
+          </div>
+        </div>
+      </div>
     </div>
-);
+  );
+  
+  
 
 const warehouses = [
     {

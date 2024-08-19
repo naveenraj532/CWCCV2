@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import Director from "../sections/Director";
 
 const AboutUs = () => {
     const aboutUsRef = useRef(null);
@@ -50,6 +51,12 @@ const AboutUs = () => {
                         With the passing of time and gaining of exposure, the varieties of cargos we handled increased manifold. Our services now include handling diverse cargo types, including bagged consignments, palletized items, cartons, drums, wooden cases, and more. Our equipment and techniques have evolved to meet these growing needs. We specialize in handling over-dimensional and break-bulk cargoes. Our extensive experience allows us to manage any type of cargo and volume, ensuring efficiency and reliability. Our client base includes multinational companies and corporate giants like Hetero Drugs, Siemens, and Redington India Pvt Ltd., showcasing our ability to handle complex and large-scale logistics operations. We are committed to providing exceptional service, building lasting relationships, and maintaining high standards in all our dealings.
                     </p>
                 </div>
+            </div>
+            <section className="padding-t">
+                <Director />
+            </section> 
+            <div className="px-32 text-center mt-8 font-montserrat font-italic text-white leading-loose">
+                <i>Our Director, Mr. Suresh Singh brings in over 30 years of exprience in the field of logistics particulary with regard of custom bonded warehouses.He is an export in handling Import corgoes and custom law related to bonded warehouses</i>
             </div>
         </div>
     );

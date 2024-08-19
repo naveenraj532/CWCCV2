@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 // import { Services } from '../sections/Services';
 import ImageSlider from "../components/ImageSlider";
 import { Clients } from '../sections/Clients';
-import { Director } from '../sections/Director';
+// import { Director } from '../sections/Director';
 import { Hero } from "../V2/Hero";
 import CWCworld from "../V2/CWCworld";
 import Whatwedo from "../V2/Whatwedo";
@@ -83,12 +83,6 @@ const Home = () => {
                 className={`xl:padding-0 wide:padding-r padding-b ${fadeInSections.director ? "animate-fadeInUp" : ""}`}
             >
                 <AboutUs />
-            </section> 
-            <section
-                ref={el => (sectionRefs.current.director = el)}
-                className={`xl:padding-0 wide:padding-r padding-b ${fadeInSections.director ? "animate-fadeInUp" : ""}`}
-            >
-                <Director />
             </section> 
 
             <section
