@@ -38,9 +38,9 @@ const AboutUs = () => {
             <h1 className="font-inter font-bold text-gray-300 text-4xl text-center pb-2">
                 About Us
             </h1>
-                <p className="text-blue text-md md:text-md max-w-2xl mx-auto">
+                <i className="text-lightgray text-sm md:text-md max-w-2xl mx-auto">
                     Discover our journey, values, and the dedicated team driving our success.
-                </p>
+                </i>
             </div>
 
             {/* Introduction and Profile Section */}
