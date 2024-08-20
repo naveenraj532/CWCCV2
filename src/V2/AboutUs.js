@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import Director from "../sections/Director";
+import Director from "./Director";
 
 const AboutUs = () => {
     const aboutUsRef = useRef(null);

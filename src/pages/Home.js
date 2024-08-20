@@ -3,12 +3,12 @@ import { useEffect, useRef, useState } from "react";
 // import MoreAboutUs from '../sections/MoreAboutUs';
 // import { Services } from '../sections/Services';
 import ImageSlider from "../components/ImageSlider";
-import { Clients } from '../sections/Clients';
+import { Clients } from '../V2/Clients';
 // import { Director } from '../sections/Director';
 import { Hero } from "../V2/Hero";
 import CWCworld from "../V2/CWCworld";
 import Whatwedo from "../V2/Whatwedo";
-import AboutUs from "./AboutUs";
+import AboutUs from "../V2/AboutUs";
 import ContactUs from "./ContactUs"
 
 const Home = () => {

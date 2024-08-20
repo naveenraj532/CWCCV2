@@ -6,27 +6,26 @@ export const Footer = () => {
     <div className="bg-lightblack text-white p-8">
       <div className={`bg-gray-700 h-[0.6px] mb-10`}></div>
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row md:gap-64 items-start justify-center">
-          
+        <div className="flex flex-col md:flex-row md:gap-64 items-center md:items-start justify-center text-center md:text-left">
+
           {/* Contact Information */}
-          <div className="text-center md:text-left mb-8 md:mb-0">
+          <div className="mb-8 md:mb-0">
             <img src={logo} alt="CWC Logo" className="mx-auto md:mx-0 mb-6" width={100} />
             <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
             <p><FaPhone className="inline mr-2" /> Phone: 9962009881</p>
             <p><FaClock className="inline mr-2" /> Opening Hours: 10:00 AM - 06:00 PM</p>
             <p><FaEnvelope className="inline mr-2" /> Email: <a href="mailto:info@cwcchennai.com" className="text-gray-400 hover:text-white">info@cwcchennai.com</a></p>
 
-            <p className="mt-4">Buy Now</p>
             <button
-                className="mt-4 px-4 py-2 bg-transparent border-2 border-blue border-solid text-white rounded hover:bg-blue transition duration-300"
-                onClick={() => document.getElementById('contact-us').scrollIntoView({ behavior: 'smooth' })}
-              >
-                Request a Quote
+              className="mt-4 px-4 py-2 bg-transparent border-2 border-blue text-white rounded hover:bg-blue transition duration-300"
+              onClick={() => document.getElementById('contact-us').scrollIntoView({ behavior: 'smooth' })}
+            >
+              Request a Quote
             </button>
           </div>
 
           {/* Menu */}
-          <div className="text-center md:text-left mb-8 md:mb-0">
+          <div className="mb-8 md:mb-0">
             <h3 className="font-semibold text-lg mb-4">Menu</h3>
             <ul className="space-y-2">
               <li><a href="#hero" className="text-gray-400 text-lg hover:text-white">Home</a></li>
@@ -50,44 +49,30 @@ export const Footer = () => {
           </div>
 
           {/* Address Section */}
-          <div className="text-center md:text-left">
+          <div>
             <h3 className="font-semibold text-lg mb-4">Our Locations</h3>
             <div className="space-y-4">
-              <div className='flex flex-row items-center'>
-                <FaMapMarkerAlt className="inline mr-2 text-gray-400" size={24} />
-                <div>
-                  <p className="font-semibold">Air Warehouse</p>
-                  <p className="text-sm w-56 text-lightgray">99/5, MGR Salai, Nagalkeni, Chromepet, Chennai - 600 044.</p>
+              {[
+                { title: "Air Warehouse", address: "99/5, MGR Salai, Nagalkeni, Chromepet, Chennai - 600 044." },
+                { title: "Sea Warehouse Unit 1", address: "Door No. 90, G.N.T Road, Ponniamman Medu, Madhavaram, Chennai - 600060." },
+                { title: "Sea Warehouse Unit 2", address: "SY. No 2/1A & 3/3A, Kathirvedu Village, Puzhal, Ambattur Taluk, Chennai - 600 066" },
+                { title: "General warehouse - 3PL", address: "185/1, Inflow Technologies Pvt. Ltd. C/O CWC Imports Pvt. Ltd., Adam Nagar Main Road, Nagalkeni, Chennai - 600044." }
+              ].map((location, index) => (
+                <div key={index} className='flex items-center justify-center md:justify-start'>
+                  <FaMapMarkerAlt className="inline mr-2 text-gray-400" size={24} />
+                  <div>
+                    <p className="font-semibold">{location.title}</p>
+                    <p className="text-sm w-56 text-lightgray">{location.address}</p>
+                  </div>
                 </div>
-              </div>
-              <div className='flex flex-row items-center'>
-                <FaMapMarkerAlt className="inline mr-2 text-gray-400" size={24} />
-                <div>
-                  <p className="font-semibold">Sea Warehouse Unit 1</p>
-                  <p className="text-sm w-56 text-lightgray">Door No. 90, G.N.T Road, Ponniamman Medu, Madhavaram, Chennai - 600060.</p>
-                </div>
-              </div>
-              <div className='flex flex-row items-center'>
-                <FaMapMarkerAlt className="inline mr-2 text-gray-400" size={24} />
-                <div>
-                  <p className="font-semibold">Sea Warehouse Unit 2</p>
-                  <p className="text-sm w-56 text-lightgray">SY. No 2/1A & 3/3A, Kathirvedu Village, Puzhal, Ambattur Taluk, Chennai - 600 066</p>
-                </div>
-              </div>
-              <div className='flex flex-row items-center'>
-                <FaMapMarkerAlt className="inline mr-2 text-gray-400" size={24} />
-                <div>
-                  <p className="font-semibold">General warehouse - 3PL</p>
-                  <p className="text-sm w-56 text-lightgray">185/1, Inflow Technologies Pvt. Ltd. C/O CWC Imports Pvt. Ltd., Adam Nagar Main Road, Nagalkeni, Chennai - 600044.</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className=" justify-center items-center pt-8">
-          <p className="text-center text-sm text-lightgray">Copyright © 2024 CWC IMPORT PVT.LTD. All rights reserved.</p>
+        <div className="pt-8 text-center">
+          <p className="text-sm text-lightgray">Copyright © 2024 CWC IMPORT PVT.LTD. All rights reserved.</p>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import '../index.css';
-import AboutUs from '../pages/AboutUs.js';
+import AboutUs from '../V2/AboutUs.js';
 import  Home  from '../pages/Home.js';
-import { Footer } from '../sections/Footer';
+import { Footer } from '../V2/Footer.js';
 import Navbar from './Navbar';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 

@@ -19,10 +19,10 @@ export const Hero = () => {
       {/* Content */}
       <div className="relative z-10 flex flex-col space-y-5 justify-center items-center text-center">
         <img src={logo} width={200} alt="CWC Import Logo" className="animate-bounce" />
-        <h1 className="font-Azonix animate-tracking-in-contract-bck text-4xl text-lightgray sm:text-5xl md:text-3xl">
+        <h1 className="font-Azonix animate-tracking-in-contract-bck lg:text-3xl text-lightgray sm:text-xl md:text-xl">
           CWC IMPORT PVT. LTD.
         </h1>
-        <p className="animate-tracking-in-contract-bck font-Azonix text-blue text-2xl sm:text-xl md:text-2xl">
+        <p className="animate-tracking-in-contract-bck font-Azonix text-blue lg:text-2xl sm:text-lg sm:w-10 md:text-xl">
           A Custom Notified Public Bonded Warehouse
         </p>
         <button
