@@ -29,23 +29,23 @@ export const Footer = () => {
           <div className="text-center md:text-left mb-8 md:mb-0">
             <h3 className="font-semibold text-lg mb-4">Menu</h3>
             <ul className="space-y-2">
-              <li><a href="#hero" className="text-gray-400 hover:text-white">Home</a></li>
-              <li><a href="#about-us" className="text-gray-400 hover:text-white">About Us</a></li>
+              <li><a href="#hero" className="text-gray-400 text-lg hover:text-white">Home</a></li>
+              <li><a href="#about-us" className="text-gray-400 text-lg hover:text-white">About Us</a></li>
               <li>
-                <a href="#services" className="text-gray-400 hover:text-white">Services</a>
+                <a href="#services" className="text-gray-400 text-lg hover:text-white">Services</a>
                 <ul className="ml-4 space-y-2">
                   <li><a href="#services" className="text-gray-400 hover:text-white">Warehousing</a></li>
                   <li><a href="#services" className="text-gray-400 hover:text-white">Storage</a></li>
                   <li><a href="#services" className="text-gray-400 hover:text-white">3 PL SERVICES</a></li>
                 </ul>
               </li>
-              <li><a href="#clients" className="text-gray-400 hover:text-white">Our Clients</a></li>
-              <li><a href="#contact-us" className="text-gray-400 hover:text-white">Contact Us</a></li>
+              <li><a href="#clients" className="text-gray-400 text-lg hover:text-white">Our Clients</a></li>
+              <li><a href="#contact-us" className="text-gray-400 text-lg hover:text-white">Contact Us</a></li>
             </ul>
             <div className="mt-8 flex justify-center md:justify-start space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white"><FaGoogle /></a>
-              <a href="#" className="text-gray-400 hover:text-white"><FaFacebook /></a>
-              <a href="#" className="text-gray-400 hover:text-white"><FaTwitter /></a>
+              <a href="#" className="text-gray-400 text-lg hover:text-white"><FaGoogle /></a>
+              <a href="#" className="text-gray-400 text-lg hover:text-white"><FaFacebook /></a>
+              <a href="#" className="text-gray-400 text-lg hover:text-white"><FaTwitter /></a>
             </div>
           </div>
 
@@ -72,6 +72,13 @@ export const Footer = () => {
                 <div>
                   <p className="font-semibold">Sea Warehouse Unit 2</p>
                   <p className="text-sm w-56 text-lightgray">SY. No 2/1A & 3/3A, Kathirvedu Village, Puzhal, Ambattur Taluk, Chennai - 600 066</p>
+                </div>
+              </div>
+              <div className='flex flex-row items-center'>
+                <FaMapMarkerAlt className="inline mr-2 text-gray-400" size={24} />
+                <div>
+                  <p className="font-semibold">General warehouse - 3PL</p>
+                  <p className="text-sm w-56 text-lightgray">185/1, Inflow Technologies Pvt. Ltd. C/O CWC Imports Pvt. Ltd., Adam Nagar Main Road, Nagalkeni, Chennai - 600044.</p>
                 </div>
               </div>
             </div>
