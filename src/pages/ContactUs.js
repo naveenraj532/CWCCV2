@@ -54,21 +54,22 @@ const ContactUs = () => {
             alert("Failed to send email");
         }
     };
+    
 
     return (
-        <div className="flex flex-col mt-10 items-center justify-center min-h-screen px-4 md:px-8">
-            <h1 className="font-inter font-bold text-gray-300 text-3xl md:text-4xl text-center pb-6 md:pb-9">
+        <div className="flex flex-col mt-10 items-center justify-center min-h-screen">
+            <h1 className="font-inter font-bold text-gray-300 text-4xl text-center pb-9">
                 Get in touch
             </h1>
-            <div className="flex flex-col gap-10 md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-12">
-                <form ref={formRef} onSubmit={onSubmit} className="bg-white p-6 md:p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out opacity-0 w-full md:w-4/5">
-                    <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Send an Email</h2>
-                    <div className="space-y-4 md:space-y-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <div className="flex flex-col gap-10 md:flex-col items-center justify-center space-y-12 md:space-y-0 md:space-x-12">
+                <form ref={formRef} onSubmit={onSubmit} className="bg-white p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out opacity-0 w-full md:w-4/5">
+                    <h2 className="text-3xl font-bold text-center mb-6">Send an Email</h2>
+                    <div className="space-y-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <InputField label="First Name" name="FirstName" icon={<FaUser />} />
                             <InputField label="Last Name" name="LastName" icon={<FaUser />} />
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <InputField label="E-mail Address" name="Email" type="email" icon={<FaEnvelope />} />
                             <InputField label="Phone Number" name="PhoneNumber" type="tel" icon={<FaPhone />} />
                         </div>
@@ -82,12 +83,14 @@ const ContactUs = () => {
                     </div>
                 </form>
 
-                <div className="w-full md:w-1/2 flex flex-col gap-6 md:gap-8">
-                    {warehouses.map((warehouse, index) => (
-                        <div ref={el => (warehouseRefs.current[index] = el)} key={index} className="opacity-0">
-                            <WarehouseCard className="flip-scale-up-ver" {...warehouse} />
-                        </div>
-                    ))}
+                <div className="flex flex-wrap flex-1/2">
+                    <div className="flex flex-row gap-5 justify-center">
+                        {warehouses.map((warehouse, index) => (
+                            <div ref={el => (warehouseRefs.current[index] = el)} key={index} className="opacity-0">
+                                <WarehouseCard className="flip-scale-up-ver" {...warehouse} />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
@@ -132,23 +135,23 @@ const WarehouseCard = ({ title, address, license, mapSrc }) => (
         <div className="flipper">
             <div className="front">
                 <div className="card-content">
-                    <h2 className="title text-lg md:text-xl">{title}</h2>
-                    <p className="address text-sm md:text-base">{address}</p>
+                    <h2 className="title">{title}</h2>
+                    <p className="address">{address}</p>
                 </div>
             </div>
             <div className="back">
                 <div className="card-content">
-                    <h2 className="title text-lg md:text-xl">{title}</h2>
-                    <p className="address text-sm md:text-base">{address}</p>
+                    <h2 className="title">{title}</h2>
+                    <p className="address">{address}</p>
                     {license && (
-                        <p className="license text-sm md:text-base">
+                        <p className="license">
                             <FaIdBadge className="icon" /> {license}
                         </p>
                     )}
                     {mapSrc && (
                         <iframe
                             src={mapSrc}
-                            className="map mt-4 md:mt-2 w-full h-48 md:h-64"
+                            className="map"
                             allowFullScreen=""
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
@@ -176,11 +179,12 @@ const warehouses = [
         address: "SY. No 2/1A &3/3A, Kathirvedu Village, Puzhal, Ambattur Taluk, Chennai - 600 066.",
         mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.152035598625!2d80.2060659!3d13.1528083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52658d0487213f%3A0xed14c5fcdc36f0d9!2sCwc%20import!5e0!3m2!1sen!2sin!4v1723813561256!5m2!1sen!2sin",
     },
-    {
+        {
         title: "General warehouse - 3PL",
         address: "185/1, Inflow Technologies Pvt. Ltd. C/O CWC Imports Pvt. Ltd., Adam Nagar Main Road, Nagalkeni, Chennai, Tamilnadu, India – 600044.",
         mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1944.0595051580046!2d80.12787039839478!3d12.964235699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525f84089412db%3A0xa03e20f4a34833b7!2sINFLOW%20TECHNOLOGIES%20PVT%20LTD!5e0!3m2!1sen!2sin!4v1724134772239!5m2!1sen!2sin",
     },
 ];
+
 
 export default ContactUs;
