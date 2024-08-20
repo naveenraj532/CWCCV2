@@ -26,11 +26,12 @@ export const Hero = () => {
           A Custom Notified Public Bonded Warehouse
         </p>
         <button
-          className="mt-4 px-4 py-2 bg-transparent border-2 border-blue border-solid text-white rounded hover:bg-blue transition duration-300"
-          onClick={() => window.location.href = '/ContactUs'}
-        >
-          Request a Quote
+            className="mt-4 px-4 py-2 bg-transparent border-2 border-blue border-solid text-white rounded hover:bg-blue transition duration-300"
+            onClick={() => document.getElementById('contact-us').scrollIntoView({ behavior: 'smooth' })}
+          >
+            Request a Quote
         </button>
+
       </div>
     </main>
   );

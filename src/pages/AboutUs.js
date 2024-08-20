@@ -52,11 +52,11 @@ const AboutUs = () => {
                     </p>
                 </div>
             </div>
-            <section className="padding-t">
+            <section className="mt-12">
                 <Director />
             </section> 
             <div className="px-32 text-center mt-8 font-montserrat font-italic text-white leading-loose">
-                <i>Our Director, Mr. Suresh Singh brings in over 30 years of exprience in the field of logistics particulary with regard of custom bonded warehouses.He is an export in handling Import corgoes and custom law related to bonded warehouses</i>
+                <i>Our Director, Mr. Suresh Singh brings in over 30 years of exprience in the field of logistics particulary with regard of custom bonded warehouses.He is an expert in handling Import corgoes and custom law related to bonded warehouses</i>
             </div>
         </div>
     );

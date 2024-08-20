@@ -17,9 +17,11 @@ export const Footer = () => {
             <p><FaEnvelope className="inline mr-2" /> Email: <a href="mailto:info@cwcchennai.com" className="text-gray-400 hover:text-white">info@cwcchennai.com</a></p>
 
             <p className="mt-4">Buy Now</p>
-            <button className="mt-4 px-4 py-2 bg-lightblack border-2 border-blue border-solid text-white rounded hover:bg-blue"
-              onClick={() => window.location.href = '/ContactUs'}>
-              Request a Quote
+            <button
+                className="mt-4 px-4 py-2 bg-transparent border-2 border-blue border-solid text-white rounded hover:bg-blue transition duration-300"
+                onClick={() => document.getElementById('contact-us').scrollIntoView({ behavior: 'smooth' })}
+              >
+                Request a Quote
             </button>
           </div>
 

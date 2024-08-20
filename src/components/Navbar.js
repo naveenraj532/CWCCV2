@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FaPhoneAlt, FaEnvelopeOpenText } from 'react-icons/fa';
+import { TfiMenu } from "react-icons/tfi";
 import logo from '../assets/images/newlogo.png';
-import hamburger from '../assets/icons/hamburger.svg';
 import { navLinks } from '../constants';
 
 const Navbar = () => {
@@ -39,12 +39,12 @@ const Navbar = () => {
           <div>
             <div className='flex justify-center space-x-6'>
               <div className='flex items-center'>
-                <FaPhoneAlt className="text-lightgray text-sm mr-2" />
-                <span className="text-lightgray text-sm">9962009881</span>
+                <FaPhoneAlt className="text-lightgray text-lg mr-2" />
+                <span className="text-lightgray text-lg">9962009881</span>
               </div>
               <div className='flex items-center'>
-                <FaEnvelopeOpenText className="text-lightgray text-sm mr-2" />
-                <span className="text-lightgray text-sm">info@cwcchennai.com</span>
+                <FaEnvelopeOpenText className="text-lightgray text-lg mr-2" />
+                <span className="text-lightgray text-lg">info@cwcchennai.com</span>
               </div>
             </div>
           </div>
@@ -62,12 +62,9 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <div className='lg:hidden'>
-            <img
-              className='cursor-pointer'
-              src={hamburger}
-              alt='hamburger'
-              width={25}
-              height={25}
+            <TfiMenu
+              className='bg-white w-8 h-8'
+
               onClick={toggleMenu}
             />
           </div>
