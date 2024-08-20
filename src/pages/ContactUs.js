@@ -1,10 +1,10 @@
 import { useEffect, useRef } from "react";
-import { FaEnvelope, FaUser, FaTag, FaPhone, FaComment, FaIdBadge} from 'react-icons/fa';
+import { FaEnvelope, FaUser, FaTag, FaPhone, FaComment, FaIdBadge } from 'react-icons/fa';
 
 const ContactUs = () => {
     const contactUsRef = useRef(null);
     const formRef = useRef(null);
-    const warehouseRefs = useRef([useRef(null), useRef(null), useRef(null)]);
+    const warehouseRefs = useRef([]);
 
     useEffect(() => {
         const observerOptions = {
@@ -25,7 +25,7 @@ const ContactUs = () => {
         if (contactUsRef.current) observer.observe(contactUsRef.current);
         if (formRef.current) observer.observe(formRef.current);
         warehouseRefs.current.forEach(ref => {
-            if (ref.current) observer.observe(ref.current);
+            if (ref) observer.observe(ref);
         });
 
         return () => observer.disconnect();
@@ -51,49 +51,48 @@ const ContactUs = () => {
 
         if (res.success) {
             console.log("Success", res);
+            alert("Email Sent Successfully")
         }
     };
 
     return (
-            <div className="flex flex-col mt-10 items-center justify-center min-h-screen">
+        <div className="flex flex-col mt-10 items-center justify-center min-h-screen">
             <h1 className="font-inter font-bold text-gray-300 text-4xl text-center pb-9">
                 Get in touch
             </h1>
             <div className="flex flex-col gap-10 md:flex-col items-center justify-center space-y-12 md:space-y-0 md:space-x-12">
                 <form ref={formRef} onSubmit={onSubmit} className="bg-white p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out opacity-0 w-full md:w-4/5">
-                <h2 className="text-3xl font-bold text-center mb-6">Send an Email</h2>
-                <div className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <InputField label="First Name" name="FirstName" icon={<FaUser />} />
-                    <InputField label="Last Name" name="LastName" icon={<FaUser />} />
+                    <h2 className="text-3xl font-bold text-center mb-6">Send an Email</h2>
+                    <div className="space-y-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <InputField label="First Name" name="FirstName" icon={<FaUser />} />
+                            <InputField label="Last Name" name="LastName" icon={<FaUser />} />
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <InputField label="E-mail Address" name="Email" type="email" icon={<FaEnvelope />} />
+                            <InputField label="Phone Number" name="PhoneNumber" type="tel" icon={<FaPhone />} />
+                        </div>
+                        <InputField label="Subject" name="Subject" icon={<FaTag />} />
+                        <TextAreaField label="Message" name="Message" icon={<FaComment />} />
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <InputField label="E-mail Address" name="Email" type="email" icon={<FaEnvelope />} />
-                    <InputField label="Phone Number" name="PhoneNumber" type="tel" icon={<FaPhone />} />
+                    <div className="text-center mt-6">
+                        <button className="mt-4 px-4 py-2 text-lightblack border-2 rounded-full border-blue border-solid hover:bg-blue">
+                            Submit
+                        </button>
                     </div>
-                    <InputField label="Subject" name="Subject" icon={<FaTag />} />
-                    <TextAreaField label="Message" name="Message" icon={<FaComment />} />
-                </div>
-                <div className="text-center mt-6">
-                    <button className="mt-4 px-4 py-2 text-lightblack border-2 rounded-full border-blue border-solid hover:bg-blue"
-                        onClick={() => window.location.href = '/ContactUs'}>
-                        Submit
-                    </button>
-                </div>
                 </form>
 
-                <div className="flex flex-wrap  flex-1/2">
-                <div className="flex flex-row gap-5 justify-center">
-                    {warehouses.map((warehouse, index) => (
-                    <div ref={warehouseRefs.current[index]} key={index} className="opacity-0">
-                        <WarehouseCard className="flip-scale-up-ver" {...warehouse} />
+                <div className="flex flex-wrap flex-1/2">
+                    <div className="flex flex-row gap-5 justify-center">
+                        {warehouses.map((warehouse, index) => (
+                            <div ref={el => (warehouseRefs.current[index] = el)} key={index} className="opacity-0">
+                                <WarehouseCard className="flip-scale-up-ver" {...warehouse} />
+                            </div>
+                        ))}
                     </div>
-                    ))}
-                </div>
                 </div>
             </div>
-            </div>
-
+        </div>
     );
 };
 
@@ -132,38 +131,36 @@ const TextAreaField = ({ label, name, icon }) => (
 
 const WarehouseCard = ({ title, address, license, mapSrc }) => (
     <div className="flip-container" onClick={(e) => e.currentTarget.classList.toggle('hover')}>
-      <div className="flipper">
-        <div className="front">
-          <div className="card-content">
-            <h2 className="title">{title}</h2>
-            <p className="address">{address}</p>
-          </div>
+        <div className="flipper">
+            <div className="front">
+                <div className="card-content">
+                    <h2 className="title">{title}</h2>
+                    <p className="address">{address}</p>
+                </div>
+            </div>
+            <div className="back">
+                <div className="card-content">
+                    <h2 className="title">{title}</h2>
+                    <p className="address">{address}</p>
+                    {license && (
+                        <p className="license">
+                            <FaIdBadge className="icon" /> {license}
+                        </p>
+                    )}
+                    {mapSrc && (
+                        <iframe
+                            src={mapSrc}
+                            className="map"
+                            allowFullScreen=""
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                        ></iframe>
+                    )}
+                </div>
+            </div>
         </div>
-        <div className="back">
-          <div className="card-content">
-            <h2 className="title">{title}</h2>
-            <p className="address">{address}</p>
-            {license && (
-              <p className="license">
-                <FaIdBadge className="icon" /> {license}
-              </p>
-            )}
-            {mapSrc && (
-              <iframe
-                src={mapSrc}
-                className="map"
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-            )}
-          </div>
-        </div>
-      </div>
     </div>
-  );
-  
-  
+);
 
 const warehouses = [
     {
@@ -181,6 +178,12 @@ const warehouses = [
         address: "SY. No 2/1A &3/3A, Kathirvedu Village, Puzhal, Ambattur Taluk, Chennai - 600 066.",
         mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.152035598625!2d80.2060659!3d13.1528083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52658d0487213f%3A0xed14c5fcdc36f0d9!2sCwc%20import!5e0!3m2!1sen!2sin!4v1723813561256!5m2!1sen!2sin",
     },
-]
+        {
+        title: "General warehouse - 3PL",
+        address: "185/1, Inflow Technologies Pvt. Ltd. C/O CWC Imports Pvt. Ltd., Adam Nagar Main Road, Nagalkeni, Chennai, Tamilnadu, India – 600044.",
+        mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1944.0595051580046!2d80.12787039839478!3d12.964235699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525f84089412db%3A0xa03e20f4a34833b7!2sINFLOW%20TECHNOLOGIES%20PVT%20LTD!5e0!3m2!1sen!2sin!4v1724134772239!5m2!1sen!2sin",
+    },
+];
+
 
 export default ContactUs;
