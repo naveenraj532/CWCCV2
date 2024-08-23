@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import axios from 'axios';
 import { FaEnvelope, FaUser, FaTag, FaPhone, FaComment, FaIdBadge } from 'react-icons/fa';
 
 const ContactUs = () => {
@@ -37,22 +38,26 @@ const ContactUs = () => {
     
         const object = Object.fromEntries(formData);
         const json = JSON.stringify(object);
-    
-        const res = await fetch("http://localhost:5000/api/contact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            },
-            body: json
-        }).then((res) => res.json());
-    
-        if (res.success) {
-            console.log("Success", res);
-            alert("Email Sent Successfully");
-        } else {
+
+        try {
+            const res = await axios.post("http://localhost:5000/api/contact", json, {
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json"
+                }
+            });
+        
+            if (res.data.success) {
+                console.log("Success", res.data);
+                alert("Email Sent Successfully");
+            } else {
+                alert("Failed to send email");
+            }
+        } catch (error) {
+            console.error("Error sending email:", error);
             alert("Failed to send email");
         }
+        
     };
     
 
