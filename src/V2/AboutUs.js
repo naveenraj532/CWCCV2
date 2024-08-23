@@ -56,7 +56,7 @@ const AboutUs = () => {
                 <Director />
             </section> 
             <div className="px-32 text-center mt-8 font-montserrat font-italic text-white leading-loose">
-                <i>Our Director, Mr. Suresh Singh brings in over 30 years of exprience in the field of logistics particulary with regard of custom bonded warehouses.He is an expert in handling Import corgoes and custom law related to bonded warehouses</i>
+                <i>Mr. Suresh Singh, our Director, has over 30 years of experience in the logistics industry, including managing custom bonded warehouses. He is an expert in handling import cargo and navigating customs laws related to bonded warehouses.</i>
             </div>
         </div>
     );
