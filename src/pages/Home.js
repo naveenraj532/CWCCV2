@@ -53,7 +53,7 @@ const Home = () => {
     }, []);
 
     return (
-        <main className="bg-lightblack">
+        <main className="bg-lightblack block">
             <section id="hero"
                 ref={el => (sectionRefs.current.imageLoader = el)}
                 className={`xl:padding-1 wide:padding-r scroll-mt-24 padding-b ${fadeInSections.imageLoader ? "animate-fadeInUp" : ""}`}

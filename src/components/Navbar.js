@@ -38,7 +38,7 @@ const Navbar = () => {
 
           {/* Contact Info */}
           <div className='flex flex-col sm:flex-row sm:space-x-6 mt-2 sm:mt-0 text-sm sm:text-base'>
-            <div className='flex flex-col sm:flex-row'>
+            <div className='flex flex-col sm:flex-row gap-10'>
               <div className='flex items-center mb-1 sm:mb-0'>
                 <FaPhoneAlt className="text-lightgray text-sm sm:text-base mr-2" />
                 <span className="text-lightgray">9962009881</span>
