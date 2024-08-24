@@ -3,20 +3,21 @@ import axios from 'axios';
 import { FaEnvelope, FaUser, FaTag, FaPhone, FaComment, FaIdBadge } from 'react-icons/fa';
 
 const ContactUs = () => {
+    
     const contactUsRef = useRef(null);
     const formRef = useRef(null);
     const warehouseRefs = useRef([]);
 
     useEffect(() => {
         const observerOptions = {
-            threshold: 0.1, // 10% of the element must be visible
+            threshold: 0.1, 
         };
 
         const observerCallback = (entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate-fadeInUp');
-                    observer.unobserve(entry.target); // Stop observing after animation has played
+                    observer.unobserve(entry.target); 
                 }
             });
         };

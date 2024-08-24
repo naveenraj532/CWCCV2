@@ -86,14 +86,15 @@
 
 .slide-track {
   display: flex;
+  height: 100px;
   animation: scroll 40s linear infinite;
-  width: calc(250px * 28); /* Adjust based on the number of clients times 2 */
+  width: calc(250px * 31); /* Adjust based on the number of clients times 2 */
   position: relative;
   z-index: 1;
 }
 
 .slide {
-  height: 100px;
+  height: 200px;
   flex-shrink: 0;
   width: 140px; /* Adjust based on your needs */
   display: flex;
