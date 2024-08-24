@@ -1,23 +1,23 @@
-import { useEffect, useRef } from "react";
-import axios from 'axios';
+import { useEffect, useRef, useState } from "react";
 import { FaEnvelope, FaUser, FaTag, FaPhone, FaComment, FaIdBadge } from 'react-icons/fa';
 
 const ContactUs = () => {
-    
     const contactUsRef = useRef(null);
     const formRef = useRef(null);
     const warehouseRefs = useRef([]);
+    
+    const [result, setResult] = useState("");
 
     useEffect(() => {
         const observerOptions = {
-            threshold: 0.1, 
+            threshold: 0.1,
         };
 
         const observerCallback = (entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate-fadeInUp');
-                    observer.unobserve(entry.target); 
+                    observer.unobserve(entry.target);
                 }
             });
         };
@@ -35,32 +35,30 @@ const ContactUs = () => {
 
     const onSubmit = async (event) => {
         event.preventDefault();
+        setResult("Sending....");
         const formData = new FormData(event.target);
-    
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
+        
+        formData.append("access_key", "f8a9e3e8-f228-410d-b4ce-eddec9d9cad2");
 
         try {
-            const res = await axios.post("http://localhost:5000/api/contact", json, {
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json"
-                }
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData,
             });
-        
-            if (res.data.success) {
-                console.log("Success", res.data);
-                alert("Email Sent Successfully");
+
+            const data = await response.json();
+
+            if (data.success) {
+                setResult("Form Submitted Successfully");
+                event.target.reset();
             } else {
-                alert("Failed to send email");
+                setResult(data.message);
             }
         } catch (error) {
-            console.error("Error sending email:", error);
-            alert("Failed to send email");
+            console.error("Error submitting form:", error);
+            setResult("Failed to send email");
         }
-        
     };
-    
 
     return (
         <div className="flex flex-col mt-10 items-center justify-center min-h-screen">
@@ -87,13 +85,14 @@ const ContactUs = () => {
                             Submit
                         </button>
                     </div>
+                    <p className="text-center mt-4">{result}</p>
                 </form>
 
                 <div className="flex flex-wrap flex-1/2">
                     <div className="flex flex-row gap-5 justify-center">
                         {warehouses.map((warehouse, index) => (
                             <div ref={el => (warehouseRefs.current[index] = el)} key={index} className="opacity-0">
-                                <WarehouseCard className="flip-scale-up-ver" {...warehouse} />
+                                <WarehouseCard {...warehouse} />
                             </div>
                         ))}
                     </div>
@@ -178,19 +177,21 @@ const warehouses = [
     {
         title: "Sea Warehouse Unit 1",
         address: "Door No. 90, G.N.T Road, Ponniamman Medu, Madhavaram, Chennai - 600060.",
-        mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.5988866790053!2d80.24479527489578!3d13.124577987205052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265a718f7f82f%3A0xaf59e6437288f590!2s90%2C%20Grand%20Northern%20Trunk%20Rd%2C%20Kumar%20Nagar%2C%20Kennedy%20Nagar%2C%20Erukkancheri%2C%20Madhavaram%2C%20Chennai%2C%20Tamil%20Nadu%20600118!5e0!3m2!1sen!2sin!4v1723481675498!5m2!1sen!2sin",
+        mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.5988866790053!2d80.24479527489578!3d13.124577987205052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265a718f7f82f%3A0xaf59e6437288f590!2s90%2C%20Grand%20Northern%20Trunk%20Rd%2C%20Kumar%20Nagar%2C%20Ponniamman%20Medu%2C%20Madhavaram%2C%20Chennai%2C%20Tamil%20Nadu%20600060!5e0!3m2!1sen!2sin!4v1723373563315!5m2!1sen!2sin",
     },
     {
         title: "Sea Warehouse Unit 2",
-        address: "SY. No 2/1A &3/3A, Kathirvedu Village, Puzhal, Ambattur Taluk, Chennai - 600 066.",
-        mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.152035598625!2d80.2060659!3d13.1528083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52658d0487213f%3A0xed14c5fcdc36f0d9!2sCwc%20import!5e0!3m2!1sen!2sin!4v1723813561256!5m2!1sen!2sin",
+        address: "49, Gandhi Road, Saidapet, Chennai - 600015.",
+        mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.6372172290256!2d80.21098237489564!3d13.092701986782208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5264f3b12c23e5%3A0x3c62c6d9c12bcd46!2s49%2C%20Gandhi%20Rd%2C%20Saidapet%2C%20Chennai%2C%20Tamil%20Nadu%20600015!5e0!3m2!1sen!2sin!4v1723373608775!5m2!1sen!2sin",
     },
-        {
+    {
         title: "General warehouse - 3PL",
         address: "185/1, Inflow Technologies Pvt. Ltd. C/O CWC Imports Pvt. Ltd., Adam Nagar Main Road, Nagalkeni, Chennai, Tamilnadu, India – 600044.",
         mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1944.0595051580046!2d80.12787039839478!3d12.964235699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525f84089412db%3A0xa03e20f4a34833b7!2sINFLOW%20TECHNOLOGIES%20PVT%20LTD!5e0!3m2!1sen!2sin!4v1724134772239!5m2!1sen!2sin",
-    },
+    }
 ];
 
-
 export default ContactUs;
+
+
+
