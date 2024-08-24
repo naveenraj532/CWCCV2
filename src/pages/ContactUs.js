@@ -8,6 +8,7 @@ const ContactUs = () => {
     
     const [result, setResult] = useState("");
 
+
     useEffect(() => {
         const observerOptions = {
             threshold: 0.1,
@@ -88,8 +89,8 @@ const ContactUs = () => {
                     <p className="text-center mt-4">{result}</p>
                 </form>
 
-                <div className="flex flex-wrap flex-1/2">
-                    <div className="flex flex-row gap-5 justify-center">
+                <div className="flex max-lg:flex-wrap flex-1/2 max-md:flex-col max-sm:flex-col">
+                    <div className="flex flex-wrap gap-4 justify-center lg:flex-nowrap lg:overflow-x-auto lg:gap-6">
                         {warehouses.map((warehouse, index) => (
                             <div ref={el => (warehouseRefs.current[index] = el)} key={index} className="opacity-0">
                                 <WarehouseCard {...warehouse} />

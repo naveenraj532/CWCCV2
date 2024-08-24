@@ -2,7 +2,7 @@ import Suresh from "../assets/images/Suresh.svg";
 
 const Director = () => {
   return (
-    <div className="px-80 justify-center items-center flex flex-row gap-20">
+    <div className="px-80 justify-center items-center flex max-lg:flex-row max-md:flex-col max-sm:flex-col gap-20 max-">
         <img height={200} width={200} src={Suresh} alt="director.png" />
         <div className="flex flex-col gap-1">
             <h1 className="text-blue font-montserrat font-bold text-3xl">Our Core Values</h1>
