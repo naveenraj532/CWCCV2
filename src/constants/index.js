@@ -4,9 +4,9 @@ import { FaHome, FaInfoCircle, FaBriefcase, FaUsers, FaEnvelope  } from 'react-i
 
 export const navLinks = [
     { href: '#hero', label: 'Home', icon: <FaHome /> },
-    { href: '#about-us', label: 'About Us', icon: <FaInfoCircle /> },
     { href: '#services', label: 'Services', icon: <FaBriefcase /> },
     { href: '#clients', label: 'Clients', icon: <FaUsers /> },
+    { href: '#about-us', label: 'About Us', icon: <FaInfoCircle /> },
     { href: '#contact-us', label: 'Contact Us', icon: <FaEnvelope /> },
   ];
   

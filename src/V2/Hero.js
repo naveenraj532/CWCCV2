@@ -17,12 +17,12 @@ export const Hero = () => {
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col space-y-5 justify-center items-center text-center">
-        <img src={logo} width={200} alt="CWC Import Logo" className="animate-bounce" />
-        <h1 className="font-Azonix animate-tracking-in-contract-bck text-4xl text-lightgray sm:text-5xl md:text-3xl">
+      <div className="relative z-10 flex flex-col gap-2 justify-center items-center text-center">
+        <img src={logo} alt="CWC Import Logo" className="animate-bounce w-48 max-sm:w-48" />
+        <h1 className="font-Azonix animate-tracking-in-contract-bck text-4xl max-sm:text-xl text-lightgray max-md:text-3xl">
           CWC IMPORT PVT. LTD.
         </h1>
-        <p className="animate-tracking-in-contract-bck font-Azonix text-blue text-2xl sm:text-xl md:text-2xl">
+        <p className="animate-tracking-in-contract-bck font-Azonix text-blue text-2xl max-sm:text-sm max-sm:w-80  max-md:text-lg">
           A Custom Notified Public Bonded Warehouse
         </p>
         <button
