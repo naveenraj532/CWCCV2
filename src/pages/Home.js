@@ -62,38 +62,38 @@ const Home = () => {
             </section>
             <section id="hero"
                 ref={el => (sectionRefs.current.moreAboutUs = el)}
-                className={`xl:padding-0 wide:padding-r padding-b scroll-mt-24 ${fadeInSections.moreAboutUs ? "animate-fadeInUp" : ""}`}
+                className={` max-sm:px-4 xl:padding-0 wide:padding-r scroll-mt-24 ${fadeInSections.moreAboutUs ? "animate-fadeInUp" : ""}`}
             >
                 <CWCworld />
             </section>
             <section id="services"
                 ref={el => (sectionRefs.current.services = el)}
-                className={`xl:padding-0 wide:padding-r scroll-mt-24 padding-b ${fadeInSections.services ? "animate-fadeInUp" : ""}`}
+                className={`max-sm:px-4 xl:padding-0 wide:padding-r scroll-mt-24 padding-b ${fadeInSections.services ? "animate-fadeInUp" : ""}`}
             >
                 <Whatwedo />
             </section>
             <section id="clients"
                 ref={el => (sectionRefs.current.clients = el)}
-                className={`xl:padding-0 wide:padding-r padding-b scroll-mt-24 ${fadeInSections.clients ? "animate-fadeInUp" : ""}`}
+                className={`max-sm:px-4 xl:padding-0 wide:padding-r padding-b scroll-mt-24 ${fadeInSections.clients ? "animate-fadeInUp" : ""}`}
             >
                 <Clients />
             </section>
             <section id="about-us"
                 ref={el => (sectionRefs.current.director = el)}
-                className={`xl:padding-0 wide:padding-r padding-b scroll-mt-24 ${fadeInSections.director ? "animate-fadeInUp" : ""}`}
+                className={`max-sm:px-4 xl:padding-0 wide:padding-r padding-b scroll-mt-24 ${fadeInSections.director ? "animate-fadeInUp" : ""}`}
             >
                 <AboutUs />
             </section> 
 
             <section id="contact-us"
                 ref={el => (sectionRefs.current.director = el)}
-                className={`xl:padding-0 wide:padding-r padding-b scroll-mt-24 ${fadeInSections.director ? "animate-fadeInUp" : ""}`}
+                className={`max-sm:px-4 xl:padding-0 wide:padding-r padding-b scroll-mt-24 ${fadeInSections.director ? "animate-fadeInUp" : ""}`}
             >
                 <ContactUs />
             </section> 
             <section
                 ref={el => (sectionRefs.current.blog = el)}
-                className={`xl:padding-0 wide:padding-r padding-b scroll-mt-24 ${fadeInSections.blog ? "animate-fadeInUp" : ""}`}
+                className={`max-sm:px-4 xl:padding-0 wide:padding-r padding-b scroll-mt-24 ${fadeInSections.blog ? "animate-fadeInUp" : ""}`}
             >
                 <ImageSlider />
             </section>

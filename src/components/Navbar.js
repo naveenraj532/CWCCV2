@@ -23,11 +23,11 @@ const Navbar = () => {
 
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${isScrolled ? 'bg-lightblack' : 'bg-transparent'}`}>
-      <nav className='py-2 sm:py-4 px-2 sm:px-4 lg:px-16'>
+      <nav className='py-4 max-sm:py-4 px-4 sm:px-4 lg:px-16'>
         <div className='container mx-auto flex justify-between items-center'>
           {/* Logo */}
           <a href='/'>
-            <img src={logo} alt='logo' className="w-10 h-auto sm:w-12 md:w-14 lg:w-16" />
+            <img src={logo} alt='logo' className="w-20 h-auto max-sm:w-12 max-md:w-14 " />
           </a>
 
           {/* Contact Info */}

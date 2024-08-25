@@ -3,7 +3,7 @@ const WeOffer = ({ servicename, paragraph1, paragraph2, Icon, image }) => {
     <div className="relative w-full max-w-lg mt-4 group overflow-hidden">
       <div className="relative z-10 bg-lightgray rounded-lg transition-all duration-300 py-2 group-hover:h-auto">
         {/* Header with Icon and Service Name */}
-        <div className="flex items-center px-4 py-4 md:px-10 md:py-6 max-md:flex-col">
+        <div className="flex items-center px-4 py-4 md:px-10 max-md:py-6 max-md:flex-col">
           <Icon className="text-blue text-3xl md:text-4xl mb-2 md:mb-0" />
           <h1 className="text-blue text-xl md:text-2xl font-inter font-medium ml-4">
             {servicename}
