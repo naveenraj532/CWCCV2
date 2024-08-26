@@ -45,7 +45,7 @@ const ImageSlider = () => {
             </h1>
       <div className="relative w-full h-full max-w-4xl">
         {/* Feathered Background Frame */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-60 rounded-xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-100 rounded-xl"></div>
         
         {/* Image with Feathered Shadow */}
         <div
@@ -53,7 +53,7 @@ const ImageSlider = () => {
           style={{ backgroundImage: `url(${images[currentIndex]})` }}
         >
           {/* Feathered Effect */}
-          <div className="absolute inset-0 rounded-xl bg-black bg-opacity-40"></div>
+          <div className="absolute inset-0 rounded-xl bg-black bg-opacity-0"></div>
         </div>
 
         {/* Previous Button */}

@@ -5,7 +5,7 @@ const Director = () => {
     <div className="px-8 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
       {/* Image section */}
       <img
-        className="w-48 h-auto md:w-64 lg:w-80 rounded-full"
+        className="w-72 h-auto max-md:w-32 max-lg:w-80 rounded-full"
         src={Suresh}
         alt="director.png"
       />
@@ -14,7 +14,7 @@ const Director = () => {
         <h1 className="text-blue font-montserrat font-bold text-2xl md:text-3xl">
           Our Core Values
         </h1>
-        <p className="font-inter text-lightgray font-normal text-sm md:text-base">
+        <p className="font-inter leading-normal text-lightgray font-normal text-sm md:text-base">
           We assure a most dedicated service and shall be very fair and flexible
           in all our dealings with the customers, solely looking for excellent
           rapport and continued relations. We look upon your kind self to

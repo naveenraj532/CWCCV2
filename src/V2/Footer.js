@@ -8,13 +8,12 @@ export const Footer = () => {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row md:gap-64 items-center md:items-start justify-center text-center md:text-left">
 
-          {/* Contact Information */}
           <div className="mb-8 md:mb-0">
             <img src={logo} alt="CWC Logo" className="mx-auto md:mx-0 mb-6" width={100} />
             <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
-            <p><FaPhone className="inline mr-2" /> Phone: 9962009881</p>
-            <p><FaClock className="inline mr-2" /> Opening Hours: 10:00 AM - 06:00 PM</p>
-            <p><FaEnvelope className="inline mr-2" /> Email: <a href="mailto:info@cwcchennai.com" className="text-gray-400 hover:text-white">info@cwcchennai.com</a></p>
+            <p><FaPhone className="inline mr-2" /> Phone : 9962009881</p>
+            <p><FaClock className="inline mr-2" /> Opening Hours : 10:00 AM - 06:00 PM</p>
+            <p><FaEnvelope className="inline mr-2" /> Email : <a href="mailto:info@cwcchennai.com" className="text-lightgray hover:text-white">info@cwcchennai.com</a></p>
 
             <button
               className="mt-4 px-4 py-2 bg-transparent border-2 border-blue text-white rounded hover:bg-blue transition duration-300"
@@ -24,7 +23,6 @@ export const Footer = () => {
             </button>
           </div>
 
-          {/* Menu */}
           <div className="mb-8 md:mb-0">
             <h3 className="font-semibold text-lg mb-4">Menu</h3>
             <ul className="space-y-2">
@@ -48,7 +46,6 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Address Section */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Our Locations</h3>
             <div className="space-y-4">
@@ -70,7 +67,6 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Copyright */}
         <div className="pt-8 text-center">
           <p className="text-sm text-lightgray">Copyright © 2024 CWC IMPORT PVT.LTD. All rights reserved.</p>
         </div>

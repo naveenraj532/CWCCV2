@@ -182,8 +182,8 @@ const warehouses = [
     },
     {
         title: "Sea Warehouse Unit 2",
-        address: "49, Gandhi Road, Saidapet, Chennai - 600015.",
-        mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.6372172290256!2d80.21098237489564!3d13.092701986782208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5264f3b12c23e5%3A0x3c62c6d9c12bcd46!2s49%2C%20Gandhi%20Rd%2C%20Saidapet%2C%20Chennai%2C%20Tamil%20Nadu%20600015!5e0!3m2!1sen!2sin!4v1723373608775!5m2!1sen!2sin",
+        address: "SY. No 2/1A & 3/3A, Kathirvedu Village, Puzhal, Ambattur Taluk, Chennai - 600 066",
+        mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.152035598625!2d80.2060659!3d13.1528083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52658d0487213f%3A0xed14c5fcdc36f0d9!2sCwc%20import!5e0!3m2!1sen!2sin!4v1724675986550!5m2!1sen!2sin",
     },
     {
         title: "General warehouse - 3PL",
