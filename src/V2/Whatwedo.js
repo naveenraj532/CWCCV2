@@ -13,7 +13,10 @@ import threepl from "../assets/images/3PL.jpg";
 import { MHE } from "../components/MHE";
 import forklift from "../assets/videos/forklift.mp4";
 import crane from "../assets/videos/crane.mp4";
-import trolley from "../assets/videos/trolley.mp4";
+import alarm from "../assets/videos/alarm.mp4";
+import hydrant from "../assets/videos/hydrant.mp4";
+import cctv from "../assets/videos/cctv.mp4";
+import extinguisher from "../assets/videos/extinguisher.mp4";
 
 const Whatwedo = () => {
   return (
@@ -33,15 +36,19 @@ const Whatwedo = () => {
       </div>
 
       <div className="mt-8">
-          <h1 className="font-inter font-bold text-gray-300 text-2xl sm:text-3xl text-center">
-            Our Infrastructure and Equipments
-          </h1>
-          <div className="justify-center flex items-center gap-10">
-            <MHE video={forklift} servicename={"Fork Lifts"}  />
-            <MHE video={crane} servicename={"Cranes"}  />
-            <MHE video={trolley} servicename={"Trolley"} />
-          </div>
+        <h1 className="font-inter font-bold text-gray-300 text-2xl sm:text-3xl text-center">
+          Our Infrastructure and Equipments
+        </h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center mt-6">
+          <MHE video={forklift} servicename={"Fork Lifts"} desc={"Efficient material handling for heavy loads and smooth operations."} />
+          <MHE video={crane} servicename={"Cranes"} desc={"Powerful lifting solutions for large-scale industrial projects."} />
+          <MHE video={cctv} servicename={"CCTV Cameras"} desc={"24/7 surveillance to ensure safety and security on-site."} />
+          <MHE video={extinguisher} servicename={"Fire Extinguisher"} desc={"First line of defense against unexpected fires."} />
+          <MHE video={hydrant} servicename={"Fire Hydrant"} desc={"Reliable access to water supply for firefighting."} />
+          <MHE video={alarm} servicename={"Burglar Alarm"} desc={"Advanced alert system to protect against unauthorized access."} />
+        </div>
       </div>
+
 
       <div className="mt-8">
         <h1 className="font-inter font-bold text-gray-300 text-2xl sm:text-3xl text-center">

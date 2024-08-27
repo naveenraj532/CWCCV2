@@ -1,6 +1,6 @@
 export const MHE = ({ video, servicename, desc }) => {
     return (
-      <div className="relative w-64 sm:w-96 h-64 drop-shadow-2xl overflow-hidden group perspective-1000 transition-transform duration-300 hover:scale-105 rounded-lg mt-6">
+      <div className="relative w-64 drop-shadow-[0_0_7px_rgba(255,255,255,0.7)] sm:w-96 h-64 overflow-hidden group perspective-1000 transition-transform duration-300 hover:scale-105 rounded-lg mt-6">
         {/* 3D container for rotation */}
         <div className="relative w-full h-full transform transition-transform duration-700 group-hover:rotate-x-360">
           
@@ -15,8 +15,8 @@ export const MHE = ({ video, servicename, desc }) => {
             />
             
             <div className="absolute bottom-0 left-0 right-0  text-white text-center transition-opacity duration-700 group-hover:opacity-0">
-              <div className="w-full h-full bg-gradient-to-t from-black via-transparent to-transparent p-4 rounded-t-sm">
-                <h1 className="font-montserrat text-2xl sm:text-2xl font-bold" style={{ textShadow: "10px 10px 70px rgba(0, 0, 0, 1)" }}>
+              <div className="w-full h-full bg-gradient-to-t from-gray-950 via-gray-800 to-transparent p-4 rounded-t-sm">
+                <h1 className="font-montserrat text-xl sm:text-xl font-bold" style={{ textShadow: "10px 10px 70px rgba(0, 0, 0, 1)" }}>
                   {servicename}
                 </h1>
               </div>
