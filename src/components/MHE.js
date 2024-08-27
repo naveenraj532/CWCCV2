@@ -1,50 +1,39 @@
-import { useState, useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 export const MHE = ({ video, servicename, desc }) => {
-  const [isVideoVisible, setIsVideoVisible] = useState(false);
   const videoRef = useRef(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVideoVisible(true);
-          observer.disconnect();
-        }
-      },
-      {
-        threshold: 0.25,
-      }
-    );
-    
+  const handleMouseEnter = () => {
     if (videoRef.current) {
-      observer.observe(videoRef.current);
+      videoRef.current.play();
     }
-    
-    return () => {
-      if (videoRef.current) {
-        observer.unobserve(videoRef.current);
-      }
-    };
-  }, []);
+  };
+
+  const handleMouseLeave = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0; 
+    }
+  };
 
   return (
-    <div className="relative w-64 drop-shadow-[0_0_7px_rgba(255,255,255,0.7)] sm:w-96 h-64 overflow-hidden group perspective-1000 transition-transform duration-300 hover:scale-105 rounded-lg mt-6">
-      {/* 3D container for rotation */}
+    <div
+      className="relative w-64 drop-shadow-[0_0_7px_rgba(255,255,255,0.7)] sm:w-96 h-64 overflow-hidden group perspective-1000 transition-transform duration-300 hover:scale-105 rounded-lg mt-6"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+
       <div className="relative w-full h-full transform transition-transform duration-700 group-hover:rotate-x-360">
         
-        {/* Initial state: Video */}
-        <div className="absolute inset-0 rounded-lg overflow-hidden" ref={videoRef}>
-          {isVideoVisible && (
-            <video
-              src={video}
-              className="w-full h-full object-cover"
-              autoPlay
-              muted
-              loop
-              preload="none"
-            />
-          )}
+
+        <div className="absolute inset-0 rounded-lg overflow-hidden">
+          <video 
+            ref={videoRef}
+            src={video} 
+            className="w-full h-full object-cover" 
+            muted 
+            loop
+          />
           
           <div className="absolute bottom-0 left-0 right-0 text-white text-center transition-opacity duration-700 group-hover:opacity-0">
             <div className="w-full h-full bg-gradient-to-t from-gray-950 via-gray-800 to-transparent p-4 rounded-t-sm">
