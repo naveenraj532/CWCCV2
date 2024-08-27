@@ -14,7 +14,7 @@ import { MHE } from "../components/MHE";
 import forklift from "../assets/videos/forklift.mp4";
 import crane from "../assets/videos/crane.mp4";
 import alarm from "../assets/videos/alarm.mp4";
-import hydrant from "../assets/videos/hydrant.mp4";
+import hydrant from "../assets/videos/hydrant1.mp4";
 import cctv from "../assets/videos/cctv.mp4";
 import extinguisher from "../assets/videos/extinguisher.mp4";
 
