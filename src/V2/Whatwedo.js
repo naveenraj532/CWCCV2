@@ -13,6 +13,7 @@ import threepl from "../assets/images/3PL.jpg";
 import { MHE } from "../components/MHE";
 import forklift from "../assets/videos/forklift.mp4";
 import crane from "../assets/videos/crane.mp4";
+import trolley from "../assets/videos/trolley.mp4";
 
 const Whatwedo = () => {
   return (
@@ -35,9 +36,10 @@ const Whatwedo = () => {
           <h1 className="font-inter font-bold text-gray-300 text-2xl sm:text-3xl text-center">
             Our Infrastructure and Equipments
           </h1>
-          <div className="justify-center">
-            <MHE video={forklift} servicename={"Fork Lifts"} description={"Our forklifting services ensure the efficient and safe movement of goods within the warehouse. With skilled operators and advanced equipment, we handle heavy lifting and precise stacking, optimizing storage space and streamlining your logistics operations. Whether it's loading, unloading, or organizing inventory, our team is committed to maintaining productivity and reducing handling time. Trust us to manage your materials with care and expertise, ensuring smooth operations every step of the way."}/>
-            <MHE video={crane} servicename={"Cranes"} description={"Our forklifting services ensure the efficient and safe movement of goods within the warehouse. With skilled operators and advanced equipment, we handle heavy lifting and precise stacking, optimizing storage space and streamlining your logistics operations. Whether it's loading, unloading, or organizing inventory, our team is committed to maintaining productivity and reducing handling time. Trust us to manage your materials with care and expertise, ensuring smooth operations every step of the way."}/>
+          <div className="justify-center flex items-center gap-10">
+            <MHE video={forklift} servicename={"Fork Lifts"}  />
+            <MHE video={crane} servicename={"Cranes"}  />
+            <MHE video={trolley} servicename={"Trolley"} />
           </div>
       </div>
 
