@@ -1,5 +1,6 @@
 import logo from "../assets/images/newlogonb.png";
 import bgvideo from "../assets/videos/bgvideo-1.mp4";
+import { FaWarehouse, FaUsers, FaTools } from "react-icons/fa";
 
 export const Hero = () => {
   return (
@@ -18,7 +19,11 @@ export const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center text-white">
-        <img src={logo} alt="CWC Import Logo" className="animate-bounce w-32 max-sm:w-24 mx-auto mb-4" />
+        <img
+          src={logo}
+          alt="CWC Import Logo"
+          className="animate-bounce w-32 max-sm:w-24 mx-auto mb-4"
+        />
         <h1 className="font-Azonix animate-tracking-in-contract-bck text-4xl max-sm:text-xl max-md:text-3xl mb-4">
           CWC IMPORT PVT. LTD.
         </h1>
@@ -29,19 +34,19 @@ export const Hero = () => {
         {/* Data Highlights */}
         <div className="flex flex-wrap gap-4 justify-center items-center p-4 max-sm:flex-col">
           <div className="flex items-center gap-3 p-3 bg-gray-800 rounded-lg shadow">
-            <span className="text-blue-500 text-3xl max-sm:text-xl">🏢</span>
-            <p className="font-Azonix text-white text-lg max-sm:text-sm max-md:text-base">
-              2 Lakhs Sq.ft. Warehouse
+            <span className="text-white text-4xl max-sm:text-xl"><FaWarehouse /></span>
+            <p className="font-Azonix text-white text-sm max-sm:text-sm max-md:text-base">
+              2 Lakhs Sq.ft. Bonded & <br /> General Warehouse
             </p>
           </div>
           <div className="flex items-center gap-3 p-3 bg-gray-800 rounded-lg shadow">
-            <span className="text-green-500 text-3xl max-sm:text-xl">👥</span>
+            <span className="text-white text-4xl max-sm:text-xl"><FaUsers /></span>
             <p className="font-Azonix text-white text-lg max-sm:text-sm max-md:text-base">
-              50+ Clients
+              40+ Clients
             </p>
           </div>
           <div className="flex items-center gap-3 p-3 bg-gray-800 rounded-lg shadow">
-            <span className="text-yellow-500 text-3xl max-sm:text-xl">🛠️</span>
+            <span className="text-white text-4xl max-sm:text-xl"><FaTools /></span>
             <p className="font-Azonix text-white text-lg max-sm:text-sm max-md:text-base">
               6+ Services
             </p>
