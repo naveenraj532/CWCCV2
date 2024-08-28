@@ -12,7 +12,7 @@ export const MHE = ({ video, servicename, desc }) => {
   const handleMouseLeave = () => {
     if (videoRef.current) {
       videoRef.current.pause();
-      videoRef.current.currentTime = 0; // Reset video to the start when hover ends
+      videoRef.current.currentTime = 0; 
     }
   };
 
@@ -22,13 +22,13 @@ export const MHE = ({ video, servicename, desc }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Wrapper to apply shadow changes on hover */}
+
       <div className="relative w-full h-full transition-shadow duration-300 shadow-lg  group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,1)]">
         
-        {/* 3D container for rotation */}
+
         <div className="relative w-full h-full transform transition-transform duration-700 group-hover:rotate-x-360">
           
-          {/* Initial state: Video */}
+
           <div className="absolute inset-0 rounded-lg overflow-hidden">
             <video 
               ref={videoRef}

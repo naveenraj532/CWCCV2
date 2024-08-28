@@ -171,17 +171,17 @@ const WarehouseCard = ({ title, address, license, mapSrc }) => (
 
 const warehouses = [
     {
-        title: "Air Warehouse",
+        title: "Registered office & Air Warehouse (Public Bonded Warehouse)",
         address: "99/5, MGR Salai, Nagalkeni, Chromepet, Chennai - 600 044.",
         mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.1181950323494!2d80.13705597489287!3d12.964287887350364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525fca642e74c1%3A0x3e4978a4346badcf!2s99%2F5%2C%20MGR%20Rd%2C%20Shiva%20Shankar%20Nagar%2C%20Nagalkeni%2C%20Chromepet%2C%20Chennai%2C%20Tamil%20Nadu%20600044!5e0!3m2!1sen!2sin!4v1723373408924!5m2!1sen!2sin",
     },
     {
-        title: "Sea Warehouse Unit 1",
+        title: "Sea Warehouse Unit 1 (Public Bonded Warehouse)",
         address: "Door No. 90, G.N.T Road, Ponniamman Medu, Madhavaram, Chennai - 600060.",
         mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.5988866790053!2d80.24479527489578!3d13.124577987205052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265a718f7f82f%3A0xaf59e6437288f590!2s90%2C%20Grand%20Northern%20Trunk%20Rd%2C%20Kumar%20Nagar%2C%20Ponniamman%20Medu%2C%20Madhavaram%2C%20Chennai%2C%20Tamil%20Nadu%20600060!5e0!3m2!1sen!2sin!4v1723373563315!5m2!1sen!2sin",
     },
     {
-        title: "Sea Warehouse Unit 2",
+        title: "Sea Warehouse Unit 2 (Public Bonded and General Warehouse )",
         address: "SY. No 2/1A & 3/3A, Kathirvedu Village, Puzhal, Ambattur Taluk, Chennai - 600 066",
         mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.152035598625!2d80.2060659!3d13.1528083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52658d0487213f%3A0xed14c5fcdc36f0d9!2sCwc%20import!5e0!3m2!1sen!2sin!4v1724675986550!5m2!1sen!2sin",
     },
