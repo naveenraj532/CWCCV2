@@ -48,7 +48,7 @@ export const Hero = () => {
           <div className="flex items-center gap-3 p-3 bg-gray-800 rounded-lg shadow">
             <span className="text-white text-4xl max-sm:text-xl"><FaTools /></span>
             <p className="font-Azonix text-white text-lg max-sm:text-sm max-md:text-base">
-              6+ Services
+              6 Services
             </p>
           </div>
         </div>
