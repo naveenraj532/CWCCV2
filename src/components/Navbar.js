@@ -39,7 +39,7 @@ const Navbar = () => {
               </div>
               <div className='flex items-center'>
                 <FaEnvelopeOpenText className="text-lightgray mr-2" />
-                <span className="text-lightgray">info@cwcchennai.com</span>
+                <a href='mailto:info@cwcchennai.com' className="text-lightgray">info@cwcchennai.com</a>
               </div>
             </div>
           </div>
