@@ -55,7 +55,7 @@ export const Hero = () => {
         
         {/* Button */}
         <button
-          className="mt-6 px-6 py-2 border-2 border-blue text-white rounded hover:bg-blue hover:text-black transition duration-300"
+          className="mt-6 px-6 py-2 border-2 border-blue text-white rounded hover:bg-blue hover:text-lightgray transition duration-300"
           onClick={() => document.getElementById('contact-us').scrollIntoView({ behavior: 'smooth' })}
         >
           Request a Quote

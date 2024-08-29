@@ -34,13 +34,10 @@ const AboutUs = () => {
     return (
         <div className=" px-4 md:px-8 lg:px-16 mt-10">
             {/* Hero Section */}
-            <div ref={aboutUsRef} className="text-center mb-12 opacity-0">
+            <div ref={aboutUsRef} className="text-center mb-6 opacity-0">
             <h1 className="font-inter font-bold text-gray-300 text-4xl text-center pb-2">
                 About Us
             </h1>
-                <i className="text-lightgray text-sm md:text-md max-w-2xl mx-auto">
-                    Discover our journey, values, and the dedicated team driving our success.
-                </i>
             </div>
 
             {/* Introduction and Profile Section */}

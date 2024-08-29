@@ -11,7 +11,7 @@ import warehousestorage from "../assets/images/warehousestorage.jpg";
 import storage from "../assets/images/Storage.jpg";
 import threepl from "../assets/images/3PL.jpg";
 import { MHE } from "../components/MHE";
-import forklift from "../assets/videos/forklift.mp4";
+import forklift from "../assets/videos/drumgrabber.mp4";
 import crane from "../assets/videos/crane.mp4";
 import alarm from "../assets/videos/alarm.mp4";
 import hydrant from "../assets/videos/hydrant1.mp4";
@@ -21,9 +21,9 @@ import extinguisher from "../assets/videos/extinguisher.mp4";
 const Whatwedo = () => {
   return (
     <div className="py-10 px-4 sm:px-16">
-      <h1 className="font-inter font-bold text-gray-300 text-3xl sm:text-4xl text-center pb-9">
-        What We Do ?
-      </h1>
+            <h1 className="font-inter font-bold text-gray-300 text-4xl max-sm:text-4xl text-center pb-8">
+                What We Do
+            </h1>
       
       {/* Whatwehave Section */}
       <div className="flex flex-wrap gap-4 justify-center lg:flex-nowrap lg:overflow-x-auto lg:gap-6">
@@ -36,11 +36,11 @@ const Whatwedo = () => {
       </div>
 
       <div className="mt-8">
-        <h1 className="font-inter font-bold text-gray-300 text-2xl sm:text-3xl text-center">
+        <h1 className="font-inter font-bold text-gray-300 text-2xl max-sm:text-xl text-center">
           Our Infrastructure and Equipments
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center mt-6">
-          <MHE video={forklift} servicename={"Fork Lifts"} desc={"Efficient material handling for heavy loads and smooth operations."} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center mt-1">
+          <MHE video={forklift} servicename={"Fork Lifts"} desc={"Effective material handling for heavy loads and smooth operations, and we use drum catchers for drum handling"} />
           <MHE video={crane} servicename={"Cranes"} desc={"Powerful lifting solutions for large-scale industrial projects."} />
           <MHE video={cctv} servicename={"CCTV Cameras"} desc={"24/7 surveillance to ensure safety and security on-site."} />
           <MHE video={extinguisher} servicename={"Fire Extinguisher"} desc={"First line of defense against unexpected fires."} />
@@ -51,7 +51,7 @@ const Whatwedo = () => {
 
 
       <div className="mt-8">
-        <h1 className="font-inter font-bold text-gray-300 text-2xl sm:text-3xl text-center">
+        <h1 className="font-inter font-bold text-gray-300 text-2xl max-sm:text-xl text-center">
           We Offer
         </h1>
         <div className="flex flex-col gap-8 mt-4 sm:flex-row sm:gap-10">

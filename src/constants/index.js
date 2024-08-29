@@ -3,7 +3,7 @@
 import { FaHome, FaInfoCircle, FaBriefcase, FaUsers, FaEnvelope  } from 'react-icons/fa';
 
 export const navLinks = [
-    { href: '#hero', label: 'Home', icon: <FaHome /> },
+    { href: '#home', label: 'Home', icon: <FaHome /> },
     { href: '#services', label: 'Services', icon: <FaBriefcase /> },
     { href: '#clients', label: 'Clients', icon: <FaUsers /> },
     { href: '#about-us', label: 'About Us', icon: <FaInfoCircle /> },
