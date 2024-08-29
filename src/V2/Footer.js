@@ -66,11 +66,11 @@ export const Footer = () => {
         </div>
 
         <div className="pt-8 pb-10 text-center">
+        <p className="text-sm text-lightgray mt-4">Copyright © 2024 CWC IMPORT PVT.LTD. All rights reserved.</p><br/>
           <a href="https://www.linkedin.com/in/naveen-raj-407aa0201/" className="text-gray-400 hover:text-white">
             <FaLinkedin className="inline mr-2" size={24} />
             Developer Profile
           </a>
-          <p className="text-sm text-lightgray mt-4">Copyright © 2024 CWC IMPORT PVT.LTD. All rights reserved.</p>
         </div>
       </div>
     </div>

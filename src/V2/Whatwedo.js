@@ -42,7 +42,7 @@ const Whatwedo = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center mt-1">
           <MHE video={forklift} servicename={"Fork Lifts"} desc={"Effective material handling for heavy loads and smooth operations, and we use drum catchers for drum handling"} />
           <MHE video={crane} servicename={"Cranes"} desc={"Powerful lifting solutions for large-scale industrial projects."} />
-          <MHE video={cctv} servicename={"CCTV Cameras"} desc={"24/7 surveillance to ensure safety and security on-site."} />
+          <MHE video={cctv} servicename={"CCTV Cameras"} desc={"24/7 surveillance to maintain safety and security on-site, as well as security guards"} />
           <MHE video={extinguisher} servicename={"Fire Extinguisher"} desc={"First line of defense against unexpected fires."} />
           <MHE video={hydrant} servicename={"Fire Hydrant"} desc={"Reliable access to water supply for firefighting."} />
           <MHE video={alarm} servicename={"Burglar Alarm"} desc={"Advanced alert system to protect against unauthorized access."} />
